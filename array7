@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+int main() {
+    int n, i;
+
+
+    scanf("%d", &n);
+
+   
+    int arr[n];
+
+    
+    for(i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+    int updated_arr[n];
+
+    updated_arr[0] = arr[0] * arr[1];
+
+    for(i = 1; i < n - 1; i++) {
+        updated_arr[i] = arr[i - 1] * arr[i + 1];
+    }
+
+    updated_arr[n - 1] = arr[n - 2] * arr[n - 1];
+
+    // Output the updated array
+    for(i = 0; i < n; i++) {
+        printf("%d ", updated_arr[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
